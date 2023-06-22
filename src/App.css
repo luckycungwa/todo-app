@@ -1,38 +1,284 @@
-.App {
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
+  color: #222;
+  background-color: #fffff8;
+  /* BG */
+
+}
+
+.white {
+  background-color: #fffff8;
+}
+.blue-dark {
+  background-color: #003060;
+}
+.purple {
+  background-color: #4856bb;
+}
+.blue-lite {
+  background-color: #6bcce8;
+}
+/* Colour priority */
+.important {
+  background-color: #fff756;
+}
+.due {
+  background-color: #6be87a;
+}
+.over-due {
+  background-color: #e64b4b;
+}
+
+.font-display {
+  font-size: 92px;
+  font-weight: bold;
+}
+
+.card {
+  /* max-width: 300px;
+  min-height: 200px; */
+  display: flex;
+  flex-direction: column;
+
+  /* max-width: 500px;
+  height: 300px; */
+  min-width: auto;
+  max-width: 20vw;
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  
+  backdrop-filter: blur(24px);
+}
+
+.main {
+  align-items: center;
+  align-content: center;
+  display: absolute;
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-footer {
+  font-size: 0.65em;
+  color: #446;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg {
+  background-image: url("./bg-mosaic.jpg"); 
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+input {
+  background-color: #eeedff;
+  padding: 8px;
+  margin: 0px;
+  outline: #8392ff;
+  appearance: 0;
+  border: solid #7a4aff 1px;
+  color: #222;
+  
+}
+
+.userAccounts {
+  flex-direction: row;
+  display: inline-flex;
+  gap: 24px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 2 solid #4856bb;
+  margin: 4px;
+}
+
+.user-field{
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.input-field {
+  padding: 8px;
+  top: 0;
+  left: 0;
+  color: #151515;
+  text-align: left;
+  flex-direction: column;
+  display: inline-flex;
+  margin-bottom: 12px;
+}
+
+.form-field {
+  padding: 8px;
+  top: 0;
+  left: 0;
+  color: #151515;
+  text-align: left;
+  flex-direction: column;
+  display: inline-flex;
+  min-width: 15vw;
+}
+
+
+.nav {
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: start;
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #3053ff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 30px;
+  align-items: center;
+  margin: 0px;
+  
+  width: 12vw;
+  height: 100vh;
+}
+
+.navLinks {
+  margin: 32px 0 0 0;
+  color: #efefef;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  margin: 32px 0 0 0;
+  font-weight: bold;
+  color: #ffcaf0;
+  cursor: pointer;
+  background-color: #333;
+}
+
+.Section{
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  height: 100vh;
+  display: inline-flex;
+  position: absolute;
+}
+
+.mainSection{
+
+  position: relative;
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+  gap: 12vw;
+  align-items: center;
+  align-content: center ;
+  
+}
+
+.btn-area {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.label {
+  float: left;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cta-btn {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  background-color: #fff;
+  padding: 10px 30px;
+  border: solid #7a4aff 2px;
+  transition: 0.6s;
+  transform: translateY(0);
+  /* display: flex;
+  flex-direction: row; */
+  align-items: center;
+  letter-spacing: 1px;
+  margin: 12px 12px 0px 0px;
+  gap: 12px;
 }
+
+.cta-btn:hover {
+  transition: 1000ms;
+  padding: 10px 24px;
+  transform: translateY(-0px);
+  background-color: #eeeeee6a;
+  border: solid 1px #ffffff;
+  cursor: pointer;
+  background-color: #7a4aff;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+span {
+  color: #7a4aff;
+  text-decoration: underline;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  min-width: auto;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  
+  backdrop-filter: blur(24px);
+  position: relative;
+}
+
+.todo-item:hover{
+  background-color: #ffffffa7;
+  box-shadow: 0 0 10px 1px #0000006a;
+  backdrop-filter: blur(14px);
+  translate: 10px 0px;
+}
+
+.priority {
+  background-color: #6be87a;
+  width: 4%;
+  height: 60px;
+  margin: 0 12px 0 0;
+  padding: 0;
+  
+
+}
+
+.priority:hover{
+  background-color: #08ff2d;
+  margin: 0 12px 0 0;
+  padding: 0;
+  z-index: -1;
+  
+}
+
+.list {
+  padding: 8px;
+
+}
+
+
+
