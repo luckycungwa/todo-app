@@ -89,7 +89,7 @@ function ItemList() {
                       <div className="priority"></div>
                       <div className="list">
                         {/* This is where each item (Index) from the array will be displayed */}
-                        <p>MEETING WITH </p>
+                        <p>MEETING </p>
                       </div>
                     </div>
                   </div>
