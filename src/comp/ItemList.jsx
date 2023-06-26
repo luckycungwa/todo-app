@@ -70,26 +70,28 @@ function ItemList() {
                   <div className="">
                     {/* THE ITEM COMPONENTS HERE */}
                     <div className="todo-item">
-                      <div className="priority"></div>
+                      <div className="priority over-due"></div>
                       <div className="list">
                         {/* This is where each item (Index) from the array will be displayed */}
-                        <p>COMPLETED TASK</p>
+                        <p>Go to the gym</p>
+                       
+                      </div>
+                       <div className="complete-true"></div>
+                    </div>
+                    {/* THE ITEM COMPONENTS HERE */}
+                    <div className="todo-item">
+                      <div className="priority important"></div>
+                      <div className="list">
+                        {/* This is where each item (Index) from the array will be displayed */}
+                        <p>Do laundary</p>
                       </div>
                     </div>
                     {/* THE ITEM COMPONENTS HERE */}
                     <div className="todo-item">
-                      <div className="priority"></div>
+                      <div className="priority due"></div>
                       <div className="list">
                         {/* This is where each item (Index) from the array will be displayed */}
-                        <p>AWAITING TASK</p>
-                      </div>
-                    </div>
-                    {/* THE ITEM COMPONENTS HERE */}
-                    <div className="todo-item">
-                      <div className="priority"></div>
-                      <div className="list">
-                        {/* This is where each item (Index) from the array will be displayed */}
-                        <p>MEETING </p>
+                        <p>Watch Evil Dead</p>
                       </div>
                     </div>
                   </div>
