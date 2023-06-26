@@ -1,6 +1,9 @@
 import React from "react";
 
 function Items(todos) {
+  
+
+
   return (
     // components as an  ITEM
     <>
@@ -10,18 +13,14 @@ function Items(todos) {
 
       <div className="">
         <div className="todo-item">
-          <div className="category"/>
+          <div className="category" />
           {/* Display the value recorded on the user input */}
           <p>{todos.value}</p>
           {/* components for functionality (DELETE | EDIT | MARK AS COMPLETE) */}
           <div className="complete"></div>
-        <div  className="delete">
           
         </div>
-        </div>
-        <div>
-          
-        </div>
+        <div></div>
       </div>
     </>
   );

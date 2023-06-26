@@ -294,6 +294,11 @@ flex-wrap: nowrap;
   text-align: center;
   font-weight: bolder;
   color: white;
+  /* reste all button styles for the dlete component button */
+  
+}
+
+.unbutton {
 }
 
 .delete:hover {
