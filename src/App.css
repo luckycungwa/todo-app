@@ -266,7 +266,7 @@ flex-wrap: nowrap;
 
   border: solid #7a4aff 1px;
   /* float to the right of the element */
-  right: 5%;
+  right: 4%;
   position: absolute;
 }
 .complete:hover {
@@ -320,6 +320,12 @@ flex-wrap: nowrap;
 .items-list {
   flex-direction: column;
   gap: 2px;
+}
+
+
+/* check box stuff */
+.checkbox {
+  
 }
 
 /* colour/ priority selection elements */
