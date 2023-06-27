@@ -8,7 +8,6 @@ function AddItem() {
   const handleInputChange = (e) => {
     //Monitor the user's input & alert if the iput was recorded
     setNewTask(e.target.value);
-    console.log("Task Added!"); 
   };
 
   const handleSubmit = (e) => {
@@ -21,22 +20,29 @@ function AddItem() {
       alert("You must add at least 1 task!");       // Alert the user if they did not filll in the task
       return;
     }
-
+// Create random id (index) for each Input/task 
     const task = {
       id: Math.floor(Math.random() * 1000),
       value: newTask,
     };
-
+//check through existing array before creating  new one
     setTodos((prevList) => [...prevList, task]);
     setNewTask("");
   };
-
+//delete function
   const deleteTask = (id) => {
     setTodos((prevList) => {
       return prevList.filter((task) => task.id !== id);
     });
-    console.log("SUCCESSFUL DELETE!");
+    console.log("Deleted Task called: ");
   };
+  //Edit function for the user to update their task from the array
+  // const editTask = (id) => {
+  //   setTodos((prevList) => {
+  //     return prevList.filter((task) => task.id !== id);
+  //   });
+  //   console.log("Updated Task!");
+  // };
 
   return (
     <>

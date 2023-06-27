@@ -13,23 +13,30 @@ body {
 .blue-dark {
   background-color: #003060;
 }
-.purple {
+.important1 {
   background-color: #4856bb;
 }
 .blue-lite {
   background-color: #6bcce8;
 }
 /* Colour priority */
-.important {
+.important2 {
   background-color: #fff756;
 }
-.due {
+.important3 {
   background-color: #6be87a;
 }
 .over-due {
   background-color: #e64b4b;
+  
 }
 
+.strike {
+  font-weight: bold;
+  text-decoration-line: line-through;
+  text-decoration-color: #363636;
+  text-decoration-thickness: 2px;
+}
 .font-display {
   font-size: 92px;
   font-weight: bold;
@@ -280,41 +287,33 @@ flex-wrap: nowrap;
 }
 
 .delete {
-  margin: -8px;
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
   border: solid #ff4141 2px;
   transition: all 0.3s ease;
   /* float to the right of the element */
   position: absolute;
-  right: 0%;
+  right: 0;
   align-items: center;
-  align-content: center;
   text-align: center;
-  font-weight: bolder;
-  color: white;
   /* reste all button styles for the dlete component button */
-  
+  display: flex;
 }
 
 .unbutton {
+  all: unset;
 }
 
 .delete:hover {
-  background-color: #ff000040;
   width: 44px;
   height: 24px;
-  backdrop-filter: blur(32px);
 }
 
 .category {
-  border: 2 solid #000000;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin: 4px;
-  border-radius: 25px;
-  background-color: #00000030;
 }
 
 .items-list {
@@ -324,8 +323,13 @@ flex-wrap: nowrap;
 
 
 /* check box stuff */
-.checkbox {
+.check {
+  width: 24px;
   
+}
+
+.icon-s{
+  width: 16px;
 }
 
 /* colour/ priority selection elements */
