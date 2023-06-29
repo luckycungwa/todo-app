@@ -20,13 +20,13 @@ body {
   background-color: #6bcce8;
 }
 /* Colour priority */
-.important2 {
+.medium {
   background-color: #fff756;
 }
-.important3 {
+.low {
   background-color: #6be87a;
 }
-.over-due {
+.high {
   background-color: #e64b4b;
   
 }
@@ -76,8 +76,9 @@ body {
 }
 
 .bg {
-  background-image: url("./bg-mosaic.jpg");
-  object-fit: cover;
+  background-image: url("./bg.html");
+  object-fit: fill;
+  width: 100vh ;
 }
 
 input {
@@ -87,9 +88,19 @@ input {
   padding: 8px;
   margin: 0px;
   appearance: 0;
-  border: solid #7a4aff 1px;
   color: #222;
-  border-radius: 12px;
+  border-radius: 8px;
+}
+
+.input-low{
+
+  border: solid #6be87a 1px;
+}
+.input-medium{
+  border: solid #fff756 1px;
+}
+.input-high{
+  border: solid #e64b4b 1px;
 }
 
 .userAccounts {
@@ -129,8 +140,7 @@ input {
   left: 0;
   color: #151515;
   text-align: left;
-  flex-direction: column;
-  display: inline-flex;
+  display: contents;
   min-width: 15vw;
   transition: all 0.6s;
 }
@@ -245,8 +255,8 @@ span {
   padding: 4px;
 
   border: 1px solid #3d3d3d3c;
-  border-radius: 14px;
-  background-color: #ffffff73;
+  border-radius: 4px;
+  /* background-color: #ffffff73; */
 
   margin: 2px;
   font-size: 12px;
@@ -280,7 +290,6 @@ flex-wrap: nowrap;
   padding: 0;
   width: 10px;
   height: 10px;
-  margin: 4px;
 
   border: solid #9872ff 1px;
   transition: all 0.3s ease;
@@ -292,13 +301,62 @@ flex-wrap: nowrap;
   border-radius: 15px;
   border: solid #ff4141 2px;
   transition: all 0.3s ease;
-  /* float to the right of the element */
-  position: absolute;
-  right: 0;
-  align-items: center;
-  text-align: center;
-  /* reste all button styles for the dlete component button */
+}
+
+.edit-icon {
+  width: 22px;
+  height: 22px;
+  transition-duration: .3s;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(1); 
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px #00000033;
+  background-color: #1f1f1f;
+  color: #efefef;
+  
+}
+
+.btn:hover {
+  width: 100px;
+  border-radius: 40px;
+  transition-duration: .3s;
+  color: #efefef;
+  flex-direction: row;
+}
+
+.btn-title {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: .4s;
+  letter-spacing: .5px;
+}
+
+/* hover effect button's text */
+.btn:hover .btn-title  {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .6s;
+  padding-right: 4px;
 }
 
 .unbutton {
@@ -310,14 +368,34 @@ flex-wrap: nowrap;
   height: 24px;
 }
 
+.btn-section {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 12px;
+
+  /*  */
+  align-items: center;
+ 
+  padding: 0px;
+
+  /* background-color: #ffffff73; */
+
+  margin: 2px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  
+}
+
 .category {
-  width: 24px;
-  height: 24px;
-  margin: 4px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
 }
 
 .items-list {
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 2px;
 }
 
@@ -325,11 +403,30 @@ flex-wrap: nowrap;
 /* check box stuff */
 .check {
   width: 24px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  margin: 9px 12px 0px 2px;
+
+}
+
+
+.icon-s {
+  width: 16px;
+  border-radius: 12px;
+}
+
+.task-priority {
+  width: 14px;
+  height: 32px;
+  margin-left: -12px;
+  float: inline-end;
   
 }
 
-.icon-s{
-  width: 16px;
+.priority-btn {
+  
 }
 
 /* colour/ priority selection elements */
