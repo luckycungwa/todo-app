@@ -6,55 +6,84 @@ function Items({ todo, onDelete }) {
   const [taskDone, setTaskDone] = useState(false);
   // priority states: default priority is 1, then now we check the 2 remaining priorities
 
-  // const [priority, setPriority] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
+
+  const [priority, setPriority] = useState(false);
 
   const handleComplete = () => {
     // use states if statement
     setTaskDone(!taskDone);
   };
+
+  // handle the user updating info states
+  const handleEdit = () => {
+    //
+    setIsEdit(!isEdit);
+  };
   // handle the priuority states
-  // const handlePriority = () => {
-  //   // use states the priority is urgent or important (alternate between these states)
-  //   setPriority(!priority);
-  // };
+  const handlePriority = () => {
+    // use states the priority is urgent or important (alternate between these states)
+    setPriority(!priority);
+  };
 
   return (
     <>
       {/* THE ITEM COMPONENTS HERE */}
       {/* This is where each item (Index) from the array will be displayed contentEditable="plaintext-only"*/}
-      <div>
-        <div className="todo-item">
-          {/* Check box for checking if state/ task is done or pending */}
-          <div className="category">
-            <button className="unbutton" onClick={handleComplete}>
+      <div className="todo">
+        {/* Delete corresponding task */}
+        <div className="btn-section">
+          {/* task listing below */}
+          <div className="todo-item">
+            <div
+              className={
+                priority ? "task-priority medium" : "task-priority high"
+              }
+            ></div>
+            {/* Check box for checking if state/ task is done or pending */}
+            <div className="checker">
+              <button className="unbutton" onClick={handleComplete}>
+                {/* id statement to check current state using images */}
+                {taskDone ? (
+                  <img className="check" src="/icon-done.png" alt="done" />
+                ) : (
+                  <img
+                    className="check"
+                    src="/icon-pending.png"
+                    alt="pending"
+                  />
+                )}
+              </button>
+            </div>
+            {/* Use content-editable as a cheaper approach not sure how it will affect the searh function: {priority ? "priority1" : "priority2"} */}
+            <div>
+              <p
+                contenteditable={isEdit ? "plaintext-only" : "false"}
+                autoFocus
+                className={taskDone ? "strike" : ""}
+              >
+                {todo.value}
+              </p>
+            </div>
+
+            {/* Check priority state */}
+            <button className="unbutton right" onClick={handlePriority}>
               {/* id statement to check current state using images */}
-              {taskDone ? (
-                <img className="check" src="/icon-done.png" alt="done" />
-              ) : (
-                <img className="check" src="/icon-pending.png" alt="pending" />
-              )}
+              {taskDone ? "" : ""}
             </button>
           </div>
-          {/* Use content-editable as a cheaper approach not sure how it will affect the searh function: {priority ? "priority1" : "priority2"} */}
-          <div>
-            <p className={taskDone ? "strike" : ""}>{todo.value}</p>
+          {/* Buttons below */}
 
-          </div>
-          
-          {/* priority buttons */}
-          <div className="">
-                  <div className="icon-s drak-blue"></div>
-                  <div className="icon-s drak-blue"></div>
-                  <div className="icon-s drak-blue"></div>
-                  <div className="icon-s drak-blue"></div>
-                </div>
+          <button className="btn" onClick={handleEdit}>
+            <img className="edit-icon" src="/icon-edit.png" alt="edit" />
+            <div className="btn-title">EDIT</div>
+          </button>
 
-          {/* Delete corresponding task */}
-          <button className="delete" onClick={() => onDelete(todo.id)}>
+          <button className="btn" onClick={() => onDelete(todo.id)}>
             <img className="icon-s" src="/icon-delete.png" alt="remove" />
+            <div className="btn-title">REMOVE</div>
           </button>
         </div>
-        <div></div>
       </div>
     </>
   );

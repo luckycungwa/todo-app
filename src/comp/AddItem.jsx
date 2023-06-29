@@ -46,17 +46,16 @@ function AddItem() {
 
   return (
     <>
-      <div className="main">
+      <div className="">
         <div className="">
           <div>
             <div className="form-section">
               <div className="">
                 <h1>TO DO LIST</h1>
                 <div className="userAccounts">
-                  <div className="icon important"></div>
-                  <div className="icon due"></div>
-                  <div className="icon over-due"></div>
-                  <div className="icon blue-dark"></div>
+                  <div className="icon low"></div>
+                  <div className="icon medium"></div>
+                  <div className="icon high"></div>
                 </div>
 
                 <br />
@@ -64,6 +63,7 @@ function AddItem() {
                 <form onSubmit={handleSubmit}>
                   <div className="form-field">
                     <label className="label">Create New Task</label>
+                    <br/>
                     <input
                       className="input-field"
                       placeholder="Add new task..."
@@ -71,7 +71,14 @@ function AddItem() {
                       name="todoInput"
                       value={newTask}
                       onChange={handleInputChange}
-                    />
+                    >
+                      
+                    </input>
+                     <div className="btn-section">
+                  <div className="task-priority low"></div>
+                  <div className="task-priority medium"></div>
+                  <div className="task-priority high"></div>
+                </div>
                   </div>
                 </form>
 

@@ -6,7 +6,7 @@ import Login from './comp/Login';
 
 function App() {
   return (
-    <div className="">
+    <div className="bg">
       <header className="mainSection">
         <AddItem/>
       </header>
