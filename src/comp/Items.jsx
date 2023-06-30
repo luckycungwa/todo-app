@@ -30,14 +30,17 @@ function Items({ todo, onDelete }) {
     <>
       {/* THE ITEM COMPONENTS HERE */}
       {/* This is where each item (Index) from the array will be displayed contentEditable="plaintext-only"*/}
-      <div className="todo">
+      <div className="form">
         {/* Delete corresponding task */}
         <div className="btn-section">
           {/* task listing below */}
           <div className="todo-item">
+            {/* priority management visual/icon */}
             <div
+            
               className={
                 priority ? "task-priority medium" : "task-priority high"
+                
               }
             ></div>
             {/* Check box for checking if state/ task is done or pending */}
@@ -66,11 +69,7 @@ function Items({ todo, onDelete }) {
               </p>
             </div>
 
-            {/* Check priority state */}
-            <button className="unbutton right" onClick={handlePriority}>
-              {/* id statement to check current state using images */}
-              {taskDone ? "" : ""}
-            </button>
+            
           </div>
           {/* Buttons below */}
 
@@ -80,7 +79,7 @@ function Items({ todo, onDelete }) {
           </button>
 
           <button className="btn" onClick={() => onDelete(todo.id)}>
-            <img className="icon-s" src="/icon-delete.png" alt="remove" />
+            <img className="icon-s delete" src="/icon-delete.png" alt="remove" />
             <div className="btn-title">REMOVE</div>
           </button>
         </div>

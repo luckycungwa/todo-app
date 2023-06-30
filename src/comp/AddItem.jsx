@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Items from "./Items";
+import PriorityBtn from "./PriorityBtn";
 
 function AddItem() {
   const [newTask, setNewTask] = useState("");
@@ -17,32 +18,32 @@ function AddItem() {
 
   const AddTask = () => {
     if (!newTask) {
-      alert("You must add at least 1 task!");       // Alert the user if they did not filll in the task
+      alert("You must add at least 1 task!"); // Alert the user if they did not filll in the task
       return;
     }
-// Create random id (index) for each Input/task 
+    // Create random id (index) for each Input/task
     const task = {
       id: Math.floor(Math.random() * 1000),
       value: newTask,
     };
-//check through existing array before creating  new one
+    //check through existing array before creating  new one
     setTodos((prevList) => [...prevList, task]);
     setNewTask("");
   };
-//delete function
+  //delete function
   const deleteTask = (id) => {
     setTodos((prevList) => {
       return prevList.filter((task) => task.id !== id);
     });
     console.log("Deleted Task called: ");
   };
-  //Edit function for the user to update their task from the array
-  // const editTask = (id) => {
-  //   setTodos((prevList) => {
-  //     return prevList.filter((task) => task.id !== id);
-  //   });
-  //   console.log("Updated Task!");
-  // };
+ 
+  // Options/ priority buttons
+  const [selectedOption, setSelectedOption] = React.useState(null);
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
 
   return (
     <>
@@ -60,10 +61,10 @@ function AddItem() {
 
                 <br />
                 <br />
-                <form onSubmit={handleSubmit}>
-                  <div className="form-field">
-                    <label className="label">Create New Task</label>
-                    <br/>
+                <form className="userfield" onSubmit={handleSubmit}>
+                  <div className="input-field">
+                    <label className="label left">Create New Task</label>
+
                     <input
                       className="input-field"
                       placeholder="Add new task..."
@@ -71,23 +72,26 @@ function AddItem() {
                       name="todoInput"
                       value={newTask}
                       onChange={handleInputChange}
-                    >
-                      
-                    </input>
-                     <div className="btn-section">
-                  <div className="task-priority low"></div>
-                  <div className="task-priority medium"></div>
-                  <div className="task-priority high"></div>
-                </div>
+                    ></input>
                   </div>
                 </form>
-
+                {/* dropdown components */}
+                <div>
+                  <PriorityBtn
+                    selectedOption={selectedOption}
+                    onOptionChange={handleOptionChange}
+                  />
+                  <div
+                    className="color-div"
+                    
+                  ></div>
+                </div>
                 <div className="form-field">
                   <div className="">
                     {/* TABLE FOR WORKER INFORMATION DISPLAY */}
                     {todos.map((task) => (
-                      <div key={task.id}>
-                      {/* set the values as per input and enable deletion from our component (Items)  */}
+                      <div key={task.id} >
+                        {/* set the values as per input and enable deletion from our component (Items)  */}
                         <Items todo={task} onDelete={deleteTask} />
                       </div>
                     ))}

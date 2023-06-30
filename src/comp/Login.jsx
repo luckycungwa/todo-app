@@ -1,47 +1,62 @@
 import React from "react";
 
-
 function Login() {
   return (
     <>
-      <div className="main">
+      <div className="">
         <h1 className="font-display">LOGIN PAGE</h1>
-        <div className="card">
+        <div className="">
           <div>
-            <div className="form-section">
+            <div className="">
               <div className="">
                 <h1>Login to your Account</h1>
 
                 <div className="userAccounts">
-                  <div className="icon"></div>
-                  <div className="icon"></div>
-                  <div className="icon"></div>
-                  <div className="icon"></div>
+                  <div className="icon white"></div>
+                  <div className="icon medium"></div>
+                  <div className="icon high"></div>
+                  <div className="icon low"></div>
                 </div>
+
                 <br />
                 <br />
-                <form onSubmit="">
-                  <div className="form-field ">
-                  
-                    <label className="label">Username:</label>
-                    <input className="input-field" type="text" name="position" value="" onChange="" />
-
-                    {/* <label className="label">Email: *</label>
-                    <input className="input-field" type="text" name="position" value="" onChange="" /> */}
-
-                    <label className="label">Password:</label>
-                    <input className="input-field" type="password" name="position" value="" onChange="" />
-
-                    <p className="card-footer">Forgot password</p>
+                <form className="" onSubmit="">
+                  <div className="">
+                    <div className="input-field">
+                      <label className="label left">Username: </label>
+                      <input
+                        className=""
+                        placeholder="username or email"
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                      />
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <div className="input-field">
+                      <label className="label left">Password: </label>
+                      <input
+                        className=""
+                        placeholder="username or email"
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                      /><p className="card-footer left"><span>forgot password</span></p>
+                    </div>
 
                     <br />
-                    <div className="btn-area">
+                    <div className="form-field left">
                       <button className="cta-btn" type="submit">
                         Login
                       </button>
                     </div>
                     <div className="card-footer">
-                        <p>or Create new account <span> here</span></p>
+                      <p>
+                        or Create new account <span> here</span>
+                      </p>
                     </div>
                   </div>
                 </form>

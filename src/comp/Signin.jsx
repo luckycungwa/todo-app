@@ -4,42 +4,88 @@ import React from "react";
 function Signin() {
   return (
     <>
-      <div className="main">
-        <h1 className="font-display">NEW ACCOUNT PAGE</h1>
-        <div className="card">
+      <div className="">
+        <h1 className="font-display">LOGIN PAGE</h1>
+        <div className="">
           <div>
-            <div className="form-section">
+            <div className="">
               <div className="">
-                <h1>Create Account</h1>
+                <h1>Login to your Account</h1>
 
                 <div className="userAccounts">
-                  <div className="icon"></div>
-                  <div className="icon"></div>
-                  <div className="icon"></div>
-                  <div className="icon"></div>
+                  <div className="icon white"></div>
+                  <div className="icon medium"></div>
+                  <div className="icon high"></div>
+                  <div className="icon low"></div>
                 </div>
+
                 <br />
                 <br />
-                <form onSubmit="">
-                  <div className="form-field ">
-                  
-                    <label className="label">Username:</label>
-                    <input className="input-field" type="text" name="position" value="" onChange="" />
-
-                    <label className="label">Email: *</label>
-                    <input className="input-field" type="text" name="position" value="" onChange="" />
-
-                    <label className="label">Password:</label>
-                    <input className="input-field" type="password" name="position" value="" onChange="" />
+                <form className="form-field" onSubmit="">
+                  <div className="card">
+                    <div className="input-field">
+                      <label className="label left">Name: </label>
+                      <input
+                        className=""
+                        placeholder="Name"
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                        maxLength={28}
+                      />
+                    </div>
+                    <div className="input-field">
+                      <label className="label left">Surname: </label>
+                      <input
+                        className=""
+                        placeholder="uSurname"
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                        maxLength={28}
+                      />
+                    </div>
+                    <br></br>
+                    <div className=" left input-field">
+                      <label className="label left">Email: </label>
+                      <input
+                        className=""
+                        placeholder="email"
+                        
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                      />
+                    </div>
+                    <br></br>
+                    <div className="input-field">
+                      <label className="label left">Password: </label>
+                      <input
+                        className=""
+                        placeholder="username or email"
+                        type="text"
+                        name="username"
+                        value=""
+                        onChange=""
+                        required
+                        maxLength={16}
+                      /><p className="card-footer left"><span>forgot password</span></p>
+                    </div>
+                    
 
                     <br />
-                    <div className="btn-area">
+                    <div className="form-field left">
                       <button className="cta-btn" type="submit">
-                        SIGN UP
+                        Login
                       </button>
                     </div>
                     <div className="card-footer">
-                        <p>or login <span> here </span> if your account exists</p>
+                      <p>
+                        or Create new account <span> here</span>
+                      </p>
                     </div>
                   </div>
                 </form>
