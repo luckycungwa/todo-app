@@ -8,8 +8,6 @@ function Items({ todo, onDelete }) {
 
   const [isEdit, setIsEdit] = useState(false);
 
-  const [priority, setPriority] = useState(false);
-
   const handleComplete = () => {
     // use states if statement
     setTaskDone(!taskDone);
@@ -31,14 +29,7 @@ function Items({ todo, onDelete }) {
         <div className="btn-section">
           {/* task listing below */}
           <div className="todo-item">
-            {/* priority management visual/icon */}
-            <div
             
-              className={
-                priority ? "task-priority medium" : "task-priority high"
-                
-              }
-            ></div>
             {/* Check box for checking if state/ task is done or pending */}
             <div className="checker">
               <button className="unbutton" onClick={handleComplete}>
@@ -68,7 +59,7 @@ function Items({ todo, onDelete }) {
             
           </div>
           {/* Buttons below */}
-
+          
           <button className="btn" onClick={handleEdit}>
             <img className="edit-icon" src="/icon-edit.png" alt="edit" />
             <div className="btn-title">EDIT</div>

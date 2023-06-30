@@ -5,7 +5,7 @@ body {
   color: #222;
   background-color: #eeeeee;
   /* BG */
-  background: url("./main-bg.jpg") no-repeat center center fixed;
+  background: url("./bg01.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;
@@ -14,25 +14,6 @@ body {
   align-items: center; /* Centers child vertically */
 }
 
-.white {
-  background-color: #fffff8;
-}
-.blue-dark {
-  background-color: #003060;
-}
-.important1 {
-  background-color: #4856bb;
-}
-.blue-lite {
-  background-color: #6bcce8;
-}
-/* Colour priority */
-
-/* fill on hover */
-.low:hover .medium:hover .high:hover {
-  border-radius: 50%;
-  width: 100px;
-}
 
 
 .strike {
@@ -43,18 +24,18 @@ body {
 }
 
 .font-display {
-  font-size: 92px;
+  font-size: 62px;
   font-weight: bold;
 }
 
 .cover {
   /* From https://css.glass */
-  background: #ffffff41;
+  background: #e8fffd41;
   border-radius: 16px;
-  box-shadow: 0 4px 30px #00000041;
+  box-shadow: 0 4px 30px #00000066;
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8.5px);
-  border: 1px solid #00000082;
+  -webkit-backdrop-filter: blur(8px);
+  border: 4px solid #00000082;
   /* size */
   min-width: 60vw;
   min-height: 90vh;
@@ -73,9 +54,6 @@ body {
   padding: 24px;
 
   flex-wrap: wrap;
-
-
-  
 }
 
 .main {
@@ -317,7 +295,7 @@ span {
   overflow: hidden;
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px #0051ff33;
-  background-color: #2261ff;
+  background-color: #353535;
   color: #efefef;
 }
 
@@ -400,9 +378,8 @@ span {
 
 .task-priority {
   width: 14px;
-  height: 32px;
-  margin-left: -12px;
-  float: inline-end;
+  height: 14px;
+  
 }
 
 .priority-btn {
@@ -421,47 +398,27 @@ span {
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  max-width: 50vw;
   height: auto;
 }
 
 /* colour/ priority selection elements */
 
 /* Dropdown option */
-.round-option-button {
+.priority-option {
   position: relative;
   display: inline-block;
-}
-
-.button-outline {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #000;
-  border-radius: 50%;
+  border: 1px solid #303030;
+  background: transparent;
+  padding: 2px;
+  border-radius: 50px;
   outline: none;
-  cursor: pointer;
-  background-color: transparent;
-  position: relative;
+  font-size: 8px;
+  color: #323232;
+  letter-spacing: 0.5px;
+  width: 18px;
+  height: 6px;
 }
 
-.children-container {
-  display: flex;
-  justify-content: flex-start;
-  position: absolute;
-  flex-direction: row;
-  left: 0;
-  gap: 4px;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.child {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  justify-content: flex-start;
-  position: relative;
-  flex-direction: row;
-}
 
 
 
@@ -481,7 +438,7 @@ span {
 .search-input {
   height: 1vh;
   min-width: 12vw;
-  border: 2px solid #7505ff;
+  border: 2px solid #2e2e2e;
   background: transparent;
   padding: 12px 20px;
   border-radius: 50px;
@@ -491,3 +448,121 @@ span {
   letter-spacing: 1px;
 }
 
+/* Using a template for the menu bar */
+#menu {
+	background: #323232;
+	color: #FFF;
+	height: 44px;
+	padding-left: 18px;
+	border-radius: 12px 12px 0px  0px;
+}
+#menu ul, #menu li {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none
+}
+#menu ul {
+	width: 100%;
+}
+#menu li {
+	float: left;
+	display: inline;
+	position: relative;
+}
+#menu a {
+	display: block;
+	line-height: 44px;
+	padding: 0 14px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#menu a.dropdown-arrow:after {
+	content: "\25BE";
+	margin-left: 5px;
+}
+#menu li a:hover {
+	color: #353535;
+	background: #F1F1F1;
+}
+#menu input {
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 44px;
+	width: 100%;
+	opacity: 0;
+	cursor: pointer
+}
+#menu label {
+	display: none;
+	line-height: 44px;
+	text-align: center;
+	position: absolute;
+	left: 35px
+}
+#menu label:before {
+	font-size: 1.6em;
+	content: "\2261"; 
+	margin-left: 20px;
+}
+#menu ul.sub-menus{
+	height: auto;
+	overflow: hidden;
+	width: 170px;
+	background: #444444;
+	position: absolute;
+	z-index: 99;
+	display: none;
+}
+#menu ul.sub-menus li {
+	display: block;
+	width: 100%;
+}
+#menu ul.sub-menus a {
+	color: #FFFFFF;
+	font-size: 16px;
+}
+#menu li:hover ul.sub-menus {
+	display: block
+}
+#menu ul.sub-menus a:hover{
+	background: #F2F2F2;
+	color: #444444;
+}
+
+.right {
+  float: right;
+  right: 0;
+}
+
+.nav-btn:hover {
+  transform: scale(0.98);
+ border-radius: 20px;
+}
+
+/* menu cards as navigation buttons */
+.card-item {
+  margin: 12px auto;
+ 
+  box-shadow: 5px 5px 30px 7px #05050550;
+  cursor: pointer;
+  transition: 0.6s;
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  transition: all .3s;
+}
+
+.main-menu {
+  width: 100%;
+
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+}

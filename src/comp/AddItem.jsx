@@ -47,11 +47,7 @@ function AddItem() {
 
   return (
     <>
-      <div className="">
-        <div className="">
-          <div>
             <div className="form-section">
-              <div className="">
                 <h1>TO DO LIST</h1>
                 <div className="search">
                   {/* search box contents */}
@@ -82,7 +78,6 @@ function AddItem() {
                     </div>
                   </form>
                   {/* Priority selection button */}
-                  <PriorityBtn />
                 </div>
 
                 {/* dropdown components */}
@@ -104,15 +99,12 @@ function AddItem() {
                           <Items todo={task} onDelete={deleteTask} />
                         </div>
                       ))}
+                      
                   </div>
 
                   <br />
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }
