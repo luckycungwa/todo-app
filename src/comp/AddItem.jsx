@@ -5,6 +5,8 @@ import PriorityBtn from "./PriorityBtn";
 function AddItem() {
   const [newTask, setNewTask] = useState("");
   const [todos, setTodos] = useState([]);
+  // search functionality here
+  const [searchTask, setSearchTask] = useState("");
 
   const handleInputChange = (e) => {
     //Monitor the user's input & alert if the iput was recorded
@@ -14,6 +16,9 @@ function AddItem() {
   const handleSubmit = (e) => {
     e.preventDefault();
     AddTask();
+  };
+  const Search = (e) => {
+    setSearchTask(e.target.value)
   };
 
   const AddTask = () => {
@@ -37,13 +42,8 @@ function AddItem() {
     });
     console.log("Deleted Task called: ");
   };
- 
-  // Options/ priority buttons
-  const [selectedOption, setSelectedOption] = React.useState(null);
 
-  const handleOptionChange = (option) => {
-    setSelectedOption(option);
-  };
+  // Options/ priority buttons
 
   return (
     <>
@@ -53,48 +53,57 @@ function AddItem() {
             <div className="form-section">
               <div className="">
                 <h1>TO DO LIST</h1>
-                <div className="userAccounts">
-                  <div className="icon low"></div>
-                  <div className="icon medium"></div>
-                  <div className="icon high"></div>
+                <div className="search">
+                  {/* search box contents */}
+                  <input
+                    className="search-input"
+                    placeholder="search Task"
+                    type="text"
+                    name="search"
+                    value={searchTask}
+                    onChange={Search}
+                  ></input>
                 </div>
 
                 <br />
                 <br />
-                <form className="userfield" onSubmit={handleSubmit}>
-                  <div className="input-field">
-                    <label className="label left">Create New Task</label>
+                <div className="btn-section">
+                  {/* <label className="label left">Create New Task</label> */}
+                  <form onSubmit={handleSubmit}>
+                    <div>
+                      <input
+                        className="input-field"
+                        placeholder="Add new task..."
+                        type="text"
+                        name="todoInput"
+                        value={newTask}
+                        onChange={handleInputChange}
+                      ></input>
+                    </div>
+                  </form>
+                  {/* Priority selection button */}
+                  <PriorityBtn />
+                </div>
 
-                    <input
-                      className="input-field"
-                      placeholder="Add new task..."
-                      type="text"
-                      name="todoInput"
-                      value={newTask}
-                      onChange={handleInputChange}
-                    ></input>
-                  </div>
-                </form>
                 {/* dropdown components */}
-                <div>
-                  <PriorityBtn
-                    selectedOption={selectedOption}
-                    onOptionChange={handleOptionChange}
-                  />
-                  <div
-                    className="color-div"
-                    
-                  ></div>
-                </div>
+                <div></div>
                 <div className="form-field">
                   <div className="">
                     {/* TABLE FOR WORKER INFORMATION DISPLAY */}
-                    {todos.map((task) => (
-                      <div key={task.id} >
-                        {/* set the values as per input and enable deletion from our component (Items)  */}
-                        <Items todo={task} onDelete={deleteTask} />
-                      </div>
-                    ))}
+                   
+                    {todos
+                      .filter((task) =>
+                      
+                        task.value
+                          .toLowerCase()
+                          .includes(searchTask.toLowerCase())
+                      )
+                      .map((task) => (
+                        <div key={task.id}>
+                          {/* set the values as per input and enable deletion from our component (Items)  */}
+                          <Items todo={task} onDelete={deleteTask} />
+                        </div>
+                      ))}
                   </div>
 
                   <br />

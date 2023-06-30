@@ -2,31 +2,24 @@ import React from "react";
 import { useState } from "react";
 
 function PriorityBtn() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <>
-      {/* Option button for selecting priority and category */}
-      <div className="priority-btn">
-        <div
-          className={`option ${selectedOption === "high" ? "high" : ""}`}
-          onClick={() => handleOptionClick("high")}
-        ></div>
-        <div
-          className={`option ${selectedOption === "low" ? "low" : ""}`}
-          onClick={() => handleOptionClick("low")}
-        ></div>
-        <div
-          className={`option ${selectedOption === "medium" ? "medium" : ""}`}
-          onClick={() => handleOptionClick("medium")}
-        ></div>
-      </div>
-    </>
+    <div className={`round-option-button${isOpen ? ' open' : ''}`}>
+      <button className="button-outline" onClick={handleClick}></button>
+      {isOpen && (
+        <div className="children-container">
+          <div className="child low"></div>
+          <div className="child medium"></div>
+          <div className="child high"></div>
+        </div>
+      )}
+    </div>
   );
-}
+};
 
 export default PriorityBtn;

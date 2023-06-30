@@ -27,23 +27,13 @@ body {
   background-color: #6bcce8;
 }
 /* Colour priority */
-.low {
-  border-left: 30px solid #56ff72;
-  border-radius: 25px;
-}
-.medium {
-  
-  border-left: 30px solid #e99132;
-}
+
 /* fill on hover */
 .low:hover .medium:hover .high:hover {
   border-radius: 50%;
   width: 100px;
 }
 
-.high {
-  border-left: 30px solid #e93238;
-}
 
 .strike {
   font-weight: bold;
@@ -438,40 +428,66 @@ span {
 /* colour/ priority selection elements */
 
 /* Dropdown option */
-.priority-btn {
-  display: flex;
+.round-option-button {
+  position: relative;
+  display: inline-block;
 }
 
-.option {
-  width: 24px;
-  height: 24px;
+.button-outline {
+  width: 40px;
+  height: 40px;
   border: 2px solid #000;
   border-radius: 50%;
-  margin-right: 8px;
+  outline: none;
   cursor: pointer;
+  background-color: transparent;
+  position: relative;
 }
 
-.primary {
-  border-width: 4px;
+.children-container {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  flex-direction: row;
+  left: 0;
+  gap: 4px;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.option.high {
+.child {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: flex-start;
+  position: relative;
+  flex-direction: row;
+}
+
+
+
+.high {
   background-color: #ff0d0d;
 }
 
-.option.low {
+.low {
   background-color: #159d15;
 }
 
-.option.medium {
+.medium {
   background-color: #ff702d;
 }
 
-.color-div {
-  width: 100px;
-  height: 100px;
-  margin-top: 16px;
-  border: 2px solid #ff2e2e;
-  border-radius: 4px;
-  
+/* Search box design styles here */
+.search-input {
+  height: 1vh;
+  min-width: 12vw;
+  border: 2px solid #7505ff;
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 50px;
+  outline: none;
+  font-size: 16px;
+  color: #323232;
+  letter-spacing: 1px;
 }
+

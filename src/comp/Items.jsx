@@ -21,14 +21,10 @@ function Items({ todo, onDelete }) {
     setIsEdit(!isEdit);
   };
   // handle the priuority states
-  const handlePriority = () => {
-    // use states the priority is urgent or important (alternate between these states)
-    setPriority(!priority);
-  };
+  
 
   return (
     <>
-      {/* THE ITEM COMPONENTS HERE */}
       {/* This is where each item (Index) from the array will be displayed contentEditable="plaintext-only"*/}
       <div className="form">
         {/* Delete corresponding task */}
