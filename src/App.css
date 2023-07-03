@@ -104,6 +104,12 @@ input {
   border-radius: 50px;
   border: 2 solid #4856bb;
   margin: 4px;
+  transition: transform 250ms;
+}
+
+.icon:hover {
+  
+  transform: translateY(-4px);
 }
 
 .user-field {
@@ -546,7 +552,7 @@ span {
 .card-item {
   margin: 12px auto;
  
-  box-shadow: 5px 5px 30px 7px #05050550;
+  box-shadow: 5px 5px 20px 7px #05050550;
   cursor: pointer;
   transition: 0.6s;
   background-color: #f0f0f0;
@@ -554,6 +560,12 @@ span {
   height: 200px;
   border-radius: 12px;
   transition: all .3s;
+}
+.card-item:hover {
+  transition: all .4s;
+  border-radius: 0;
+  box-shadow: 5px 5px 28px 7px #050505a0;
+  translate: 0px -8px;
 }
 
 .main-menu {

@@ -17,6 +17,7 @@ function AddItem() {
     e.preventDefault();
     AddTask();
   };
+  // create search function by targetoing and matching the value: imnput
   const Search = (e) => {
     setSearchTask(e.target.value)
   };
@@ -42,6 +43,8 @@ function AddItem() {
     });
     console.log("Deleted Task called: ");
   };
+
+  //Search Query
 
   // Options/ priority buttons
 
@@ -87,8 +90,9 @@ function AddItem() {
                     {/* TABLE FOR WORKER INFORMATION DISPLAY */}
                    
                     {todos
-                      .filter((task) =>
-                      
+                      .filter(
+                       (task) =>
+                      //enable the display to display the values matched on the search function (disable caseSensitivity)
                         task.value
                           .toLowerCase()
                           .includes(searchTask.toLowerCase())

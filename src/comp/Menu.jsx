@@ -1,21 +1,30 @@
 import React from "react";
+// navigation & routes import
+import { NavLink } from "react-router-dom";
 
 function Menu() {
-  
   return (
     <>
-<nav id='menu'>
-  <input type='checkbox' id='responsive-menu'/><label></label>
-  <ul>
-    <li><a href='http://'>Home</a></li>
-    <li><a href='http://'>About</a></li>
-    <li><a href='http://'>Contact Us</a></li>
-    <li className="right"><a href='http://'>sig</a></li>
-    
-  </ul>
-</nav>
+      <nav id="menu">
+        <input type="checkbox" id="responsive-menu" />
+        <label></label>
+          <ul>
+            <li>
+              <NavLink to="/Home">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/AddItem">Notes</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Login">Login</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Signin">Create Account</NavLink>
+            </li>
+          </ul>
+      </nav>
     </>
   );
-};
+}
 
 export default Menu;

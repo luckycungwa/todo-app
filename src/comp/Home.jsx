@@ -1,43 +1,44 @@
 import React from "react";
+import Menu from "./Menu";
+import AddItem from "./AddItem";
+import { NavLink } from "react-router-dom";
 
 
-function Home() {
-
-    
+function Home(task) {
   return (
     <>
       <div className="main">
         <h1 className="font-display">HOME PAGE</h1>
 
-<div className="main-menu">
-<div className="card-item">
-    
-</div>
+        <div className="main-menu">
+          
 
-<div className="card-item">
-    
-</div>
+          <div className="">
+            <NavLink to="/Login">
+              <img src="/003.jpg" alt="Login" className="card-item" />
+            </NavLink>
+          </div>
+          <div className="">
+            <NavLink to="/AddItem">
+              <img src="/001.jpg" alt="Create Task" className="card-item" />
+            </NavLink>
+          </div>
+          <div className="">
+            <NavLink to="/Register">
+              <img src="/002.jpg" alt="View Notes" className="card-item" />
+            </NavLink>
+          </div>
+          <div className="">
+            <NavLink to="/Login">
+              <img src="/003.jpg" alt="Login" className="card-item" />
+            </NavLink>
+          </div>
+          
 
-<div className="card-item">
-    
-</div>
-
-<div className="card-item">
-    about
-</div>
-
-<div className="card-item">
-    home
-</div>
-
-<div className="card-item">
-    
-</div>
-
-
-
-
-</div>
+        </div>
+        <div>
+        
+        </div>
       </div>
     </>
   );
