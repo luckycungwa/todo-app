@@ -1,16 +1,35 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+// Imports for user authentication | FIREBASE
+import {
+  getAuth,
+  createUserWithEmailAndPassword
+} from "firebase/auth";
+
+import { auth } from "../config/firebase";
 
 function Signin() {
   const [newUserName, setNewUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    ForceInput();
+  const Submit = (e) => {
+    // e.preventDefault();
+    // Register();
+    // ForceInput(); //rest form fields
   };
+
+  const Register = () => {
+    // creating authentication function to parse user details (username, email, etc.)
+    createUserWithEmailAndPassword(newUserName, userEmail, userEmail, password, auth)
+      .then(() => {
+        alert("YOU ARE BNOW SIGNED IN!");
+      })
+      .catch((error) => {});
+  };
+
   const resetForm = (e) => {
     setNewUserName("");
     setUserEmail("");
@@ -22,13 +41,12 @@ function Signin() {
     if (!newUserName) {
       alert("You must add at least 1 task!"); // Alert the user if they did not filll in the task
       return;
-    } else {
-      alert("CONGRATULATION. YOUR ACCOUNT HAS BEEN HACKED!"); // Alert the user if they did not filll in the task
-    resetForm();
-    }
+     } 
+    //else {
+    //   alert("CONGRATULATION. YOUR ACCOUNT HAS BEEN HACKED!"); // Alert the user if they did not filll in the task
+    //   resetForm();
+    // }
   };
-
-
 
   return (
     <>
@@ -78,7 +96,7 @@ function Signin() {
                   required
                 />
               </div>
-              <br/>
+              <br />
               <div className="input-field">
                 <label className="label left">Surname: </label>
                 <input
@@ -112,9 +130,11 @@ function Signin() {
                 <input
                   className=""
                   placeholder="password"
-                  type="text"
+                  type="passowrd"
                   name="username"
                   maxLength={16}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   // force user to fill force
                   required
                 />
@@ -125,17 +145,13 @@ function Signin() {
 
               <br />
               <div className="form-field left">
-                <button
-                  className="cta-btn"
-                  type="submit"
-                  onClick={handleSubmit}
-                >
+                <button className="cta-btn" type="submit" onClick={Register}>
                   Login
                 </button>
               </div>
               <div className="card-footer">
                 <p>
-                  I already have an account? Click 
+                  I already have an account? Click
                   <span>
                     <NavLink to="/Login"> HERE </NavLink>
                   </span>

@@ -15,7 +15,7 @@ function App() {
     <div className="bg">
       
         <div class="body">
-          <header className="cover main">
+          <header className="">
             <Menu />
 
             <Switch>

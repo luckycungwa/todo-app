@@ -22,10 +22,9 @@ function Login() {
     }
   };
   
-
   return (
     <>
-      <div className="">
+      <div className="card">
               <div className="">
                 <h1>Login to your Account</h1>
 

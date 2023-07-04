@@ -129,6 +129,11 @@ input {
   flex-wrap: wrap;
   position: relative;
 }
+/* style input field for password & security*/
+input[type=password] {
+  input-security:auto;
+  transition: all .3s;
+}
 
 .form-field {
   padding: 8px;
@@ -140,6 +145,8 @@ input {
   transition: all 0.6s;
   
 }
+
+
 
 .nav {
   flex-wrap: wrap;
