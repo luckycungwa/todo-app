@@ -2,11 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 // Imports for user authentication | FIREBASE
-import {
-  getAuth,
-  createUserWithEmailAndPassword
-} from "firebase/auth";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 
 function Signin() {
@@ -15,19 +11,30 @@ function Signin() {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const Submit = (e) => {
-    // e.preventDefault();
-    // Register();
-    // ForceInput(); //rest form fields
+  const Signup = () => {
+    const authUser = getAuth();
+    createUserWithEmailAndPassword(
+      authUser, //user authentication as the first object
+      
+      userEmail,
+      password
+    )
+      .then(() => {
+        alert("Login successful!");
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("An error occurred. Please try again.");
+      });
   };
 
-  const Register = () => {
-    // creating authentication function to parse user details (username, email, etc.)
-    createUserWithEmailAndPassword(newUserName, userEmail, userEmail, password, auth)
-      .then(() => {
-        alert("YOU ARE BNOW SIGNED IN!");
-      })
-      .catch((error) => {});
+  const handleSignin = () => {
+    if (!userEmail) {
+      alert("You must add at least 1 task!"); // Alert the user if they did not filll in the task
+      return;
+    } else {
+      Signup();
+    }
   };
 
   const resetForm = (e) => {
@@ -36,22 +43,10 @@ function Signin() {
     setUserSurname("");
   };
 
-  //Prevent user from submiting an empty form
-  const ForceInput = (e) => {
-    if (!newUserName) {
-      alert("You must add at least 1 task!"); // Alert the user if they did not filll in the task
-      return;
-     } 
-    //else {
-    //   alert("CONGRATULATION. YOUR ACCOUNT HAS BEEN HACKED!"); // Alert the user if they did not filll in the task
-    //   resetForm();
-    // }
-  };
-
   return (
     <>
-      <div className="">
-        <div className="">
+      <div className="main card">
+        <div className="form">
           <h1>Create New Account</h1>
 
           <div className="userAccounts">
@@ -81,7 +76,7 @@ function Signin() {
           <br />
           <form className="">
             <div className="">
-              <div className="input-field">
+              {/* <div className="input-field">
                 <label className="label left">Name: </label>
                 <input
                   className=""
@@ -89,11 +84,11 @@ function Signin() {
                   type="text"
                   name="username"
                   value={newUserName}
+                  autoComplete="given-name"
                   maxLength={28}
                   //Disable handler until we complete Firebase Lessons
                   onChange={(e) => setNewUserName(e.target.value)}
                   // force user to fill force
-                  required
                 />
               </div>
               <br />
@@ -104,21 +99,22 @@ function Signin() {
                   placeholder="Surname"
                   type="text"
                   name="username"
+                  autoComplete="family-name"
                   value={userSurname}
                   maxLength={28}
                   onChange={(e) => setUserSurname(e.target.value)}
-                  required
                 />
               </div>
-              <br></br>
+              <br></br> */}
               <div className=" input-field">
                 <label className="label left">Email: </label>
                 <input
                   className=""
                   placeholder="Email"
-                  type="text"
+                  type="email"
                   name="username"
                   value={userEmail}
+                  autoComplete="email"
                   onChange={(e) => setUserEmail(e.target.value)}
                   // force user to fill force
                   required
@@ -130,10 +126,11 @@ function Signin() {
                 <input
                   className=""
                   placeholder="password"
-                  type="passowrd"
+                  type="password"
                   name="username"
                   maxLength={16}
                   value={password}
+                  autoComplete="off"
                   onChange={(e) => setPassword(e.target.value)}
                   // force user to fill force
                   required
@@ -145,13 +142,17 @@ function Signin() {
 
               <br />
               <div className="form-field left">
-                <button className="cta-btn" type="submit" onClick={Register}>
+                <button
+                  className="cta-btn"
+                  type="submit"
+                  onClick={handleSignin}
+                >
                   Login
                 </button>
               </div>
               <div className="card-footer">
                 <p>
-                  I already have an account? Click
+                  You already have an account? Click 
                   <span>
                     <NavLink to="/Login"> HERE </NavLink>
                   </span>

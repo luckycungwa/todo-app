@@ -8,13 +8,14 @@ import ItemList from "./comp/ItemList";
 import Login from "./comp/Login";
 import Menu from "./comp/Menu";
 import Signin from "./comp/Signin";
+import PageNotFound from "./comp/PageNotFound"
 
 function App() {
   return (
       <Router>
     <div className="bg">
       
-        <div class="body">
+        <div class="cover">
           <header className="">
             <Menu />
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="/AddItem" component={AddItem} />
               <Route path="/Login" component={Login} />
               <Route path="/Signin" component={Signin} />
+              <Route path="*" component={PageNotFound}/>
             </Switch>
           </header>
         </div>

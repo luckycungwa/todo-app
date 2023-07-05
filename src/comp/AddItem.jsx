@@ -50,24 +50,17 @@ function AddItem() {
 
   return (
     <>
-            <div className="form-section">
+            <div className="main">
                 <h1>TO DO LIST</h1>
                 <div className="search">
-                  {/* search box contents */}
-                  <input
-                    className="search-input"
-                    placeholder="search Task"
-                    type="text"
-                    name="search"
-                    value={searchTask}
-                    onChange={Search}
-                  ></input>
+                  
                 </div>
 
                 <br />
                 <br />
                 <div className="btn-section">
                   {/* <label className="label left">Create New Task</label> */}
+                 
                   <form onSubmit={handleSubmit}>
                     <div>
                       <input
@@ -79,8 +72,18 @@ function AddItem() {
                         onChange={handleInputChange}
                       ></input>
                     </div>
+                    
                   </form>
                   {/* Priority selection button */}
+                  {/* search box contents */}
+                  <input
+                    className="search-input"
+                    placeholder="search"
+                    type="text"
+                    name="search"
+                    value={searchTask}
+                    onChange={Search}
+                  ></input>
                 </div>
 
                 {/* dropdown components */}
@@ -107,6 +110,7 @@ function AddItem() {
                   </div>
 
                   <br />
+                   
               </div>
             </div>
     </>

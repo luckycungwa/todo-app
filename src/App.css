@@ -1,7 +1,7 @@
 body {
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.7em;
+  line-height: 1.4em;
   color: #222;
   background-color: #eeeeee;
   /* BG */
@@ -13,8 +13,6 @@ body {
   justify-content: center; /* Centers child horizontally */
   align-items: center; /* Centers child vertically */
 }
-
-
 
 .strike {
   font-weight: bold;
@@ -45,12 +43,12 @@ body {
 .card {
   /* max-width: 300px;
   min-height: 200px; */
-  display:grid;
-  flex-direction: column;
-
+  display: grid;
+  flex-direction: row;
+position: absolute;
   /* max-width: 500px;
   height: 300px; */
-  max-width: 44vw;
+  /* max-width: 44vw; */
   padding: 24px;
 
   flex-wrap: wrap;
@@ -71,8 +69,7 @@ body {
 }
 
 input {
-  height: 2.5vh;
-  min-width: 14vw;
+  
   background-color: #fbfbff;
   padding: 8px;
   margin: 0px;
@@ -80,16 +77,6 @@ input {
   color: #222;
   border-radius: 8px;
   flex: auto;
-}
-
-.input-low {
-  border: solid #6be87a 1px;
-}
-.input-medium {
-  border: solid #fff756 1px;
-}
-.input-high {
-  border: solid #e64b4b 1px;
 }
 
 .userAccounts {
@@ -132,21 +119,21 @@ input {
 /* style input field for password & security*/
 input[type=password] {
   input-security:auto;
-  transition: all .3s;
+  transition: all .6s;
 }
 
 .form-field {
   padding: 8px;
-  
   color: #151515;
   display: contents;
-  min-width: 12vw;
-  max-width: auto;
   transition: all 0.6s;
   
 }
 
-
+::placeholder {
+  font-size: 12px;
+  font-weight: lighter;
+}
 
 .nav {
   flex-wrap: wrap;
@@ -432,9 +419,6 @@ span {
   height: 6px;
 }
 
-
-
-
 .high {
   background-color: #ff0d0d;
 }
@@ -449,16 +433,29 @@ span {
 
 /* Search box design styles here */
 .search-input {
-  height: 1vh;
-  min-width: 12vw;
+  color: white;
+  text-decoration: none;
   border: 2px solid #2e2e2e;
   background: transparent;
-  padding: 12px 20px;
-  border-radius: 50px;
-  outline: none;
-  font-size: 16px;
+  padding: 12px;
+  height: 1vh;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  overflow:hidden;
+  width: auto;
+  max-width: 42px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
   color: #323232;
   letter-spacing: 1px;
+  -webkit-transition: max-width 0.5s;
+  transition: all 0.6s;
+}
+
+.search-input:hover  {
+  max-width: 250px;
+}
+.search-input:focus  {
+  max-width: 250px;
 }
 
 /* Using a template for the menu bar */
@@ -584,4 +581,46 @@ span {
 
   justify-content: center;
   align-items: center;
+}
+
+/* Error 404 Stuff */
+.text-3d {
+  
+  text-shadow:     0 1px 0 #c9cfce,
+	                 0 2px 0 #bcc2c2,
+	                 0 3px 0 #afb6b6,
+	                 0 4px 0 #a4adac,
+	                 0 5px 0 #9fa8a7,
+	                 0 6px 0 #99a3a2,
+	                 0 7px 0 #97a1a0,
+	                 0 8px 0 #949e9d,
+	
+	                 0 0 5px rgba(0, 0, 0, 0.05),
+	                0 1px 3px #00000033,
+	                0 3px 5px #00000033,
+	               0 5px 10px #00000033,
+	              0 10px 10px #00000033,
+	              0 20px 20px #0000004d;
+}
+
+.error-text {
+  align-items: center;
+  align-content: center;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 200px;
+}
+.error-caption {
+  align-items: center;
+  align-content: center;
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 80px;
+  letter-spacing: 12px;
 }

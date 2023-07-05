@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 
 
 // IMPORT FUNCTIONS FROM FIREBASE
-import {getAuth} from "firebase/auth"
+import {getAuth} from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,12 +19,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 // I DID NOT INCLUDE THE GOOGLE ANALYTICS CONTENTS
-
-
-
-//INITIALIZE FIREBSE AUTHENTICATION FOR THE USER FORMS
-
+//INITIALIZE Firebase Authentication methods access.
 const auth = getAuth(app);
 
-export {auth};
+export {auth}
