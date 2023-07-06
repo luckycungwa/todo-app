@@ -4,8 +4,10 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-// IMPORT FUNCTIONS FROM FIREBASE
-import {getAuth} from 'firebase/auth'
+// IMPORT  FUNCTIONS FROM FIREBASE
+import {getAuth} from 'firebase/auth';
+//activate firebase to initialize the services from firebase
+import {getFirestore} from 'firebase/firestore';  //cloud storage
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,8 +22,12 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+//database storage | fire store for adding user data
+const db = getFirestore(app);
+
 // I DID NOT INCLUDE THE GOOGLE ANALYTICS CONTENTS
-//INITIALIZE Firebase Authentication methods access.
+// for user Authentication methods access.
 const auth = getAuth(app);
 
-export {auth}
+export {auth};
+export {db};

@@ -99,7 +99,7 @@ function Login() {
                 />
                 <p className="card-footer left">
                   <span>
-                    <NavLink to="/">forgot password</NavLink>
+                    <NavLink to="/ForgotPassword">forgot password</NavLink>
                   </span>
                 </p>
               </div>

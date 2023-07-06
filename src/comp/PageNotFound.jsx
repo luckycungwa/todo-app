@@ -11,7 +11,7 @@ function PageNotFound() {
 
         <br/>
         <p class="error-caption text-3d">PAGE NOT FOUND!</p>
-        <h3></h3>
+        <h3>Click her to go back</h3>
         </div>
 
         </div>

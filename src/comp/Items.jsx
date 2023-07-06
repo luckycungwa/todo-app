@@ -1,12 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore"; //adding & fetching data functions
+import { db } from "../config/firebase";
 
-function Items({ todo, onDelete }) {
+function Items({ todo, onDelete, setTodos }) {
   //Creating states for when the task is complete
   const [taskDone, setTaskDone] = useState(false);
   // priority states: default priority is 1, then now we check the 2 remaining priorities
 
   const [isEdit, setIsEdit] = useState(false);
+  
+
+  
 
   const handleComplete = () => {
     // use states if statement
@@ -18,9 +23,28 @@ function Items({ todo, onDelete }) {
     //
     setIsEdit(!isEdit);
   };
-  // handle the priuority states
-  
 
+   //FIRESTORE
+   useEffect(() => {
+    getTaskData();
+    
+  });
+
+  const getTaskData = async () => {
+    try {
+      const querySnapShot = await getDocs(collection(db, "todoList"));
+      const data = querySnapShot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      //Retrieve and set data from the Database | update state
+      setTodos(data);
+
+    } catch (error) {
+      alert("Check for errors!");
+    }
+  };
+  
   return (
     <>
       {/* This is where each item (Index) from the array will be displayed contentEditable="plaintext-only"*/}
@@ -52,7 +76,7 @@ function Items({ todo, onDelete }) {
                 autoFocus
                 className={taskDone ? "strike" : ""}
               >
-                {todo.value}
+                {todo.userTask}
               </p>
             </div>
 
