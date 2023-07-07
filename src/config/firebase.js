@@ -21,13 +21,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 //database storage | fire store for adding user data
 const db = getFirestore(app);
-
 // I DID NOT INCLUDE THE GOOGLE ANALYTICS CONTENTS
 // for user Authentication methods access.
 const auth = getAuth(app);
 
-export {auth};
-export {db};
+export {auth};      //firebase
+export {db};      //firestore
